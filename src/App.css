@@ -1,0 +1,48 @@
+.main-container {
+  display: flex;
+  height: 80vh;
+  width: auto;
+}
+.left-container {
+  width: 25%;
+  border-right: rgb(0, 255, 157) solid;
+}
+
+.right-container {
+  width: 75%;
+}
+
+.wheel-container {
+  width: 100%;
+  text-align: center;
+  padding: 3% 0 0 0;
+}
+
+
+p.header {
+  font-size: 16px;
+  padding-left: 15px;
+  font-weight: bold;
+}
+.option-item {
+  list-style-type: none;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.option-item > li {
+  padding: 10px 10px 10px 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.option-item > li > button {
+  float: right;
+  border: none;
+  background-color: transparent;
+  padding-right: 0;
+  margin-right: 0;
+  cursor: pointer;
+}

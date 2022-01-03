@@ -1,0 +1,16 @@
+/*.navbar {
+    background-color: grey;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-item {
+    color: white;
+    list-style-type: none;
+}
+
+.nav-links, .nav-links:visited, .nav-item {
+    text-decoration: none;
+    color: white;
+    list-style-type: none;
+}*/
