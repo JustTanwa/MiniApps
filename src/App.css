@@ -1,11 +1,12 @@
 .main-container {
   display: flex;
-  height: 80vh;
+  height: 100%;
   width: auto;
 }
 .left-container {
   width: 25%;
   border-right: rgb(0, 255, 157) solid;
+  height: 88vh;
 }
 
 .right-container {
@@ -13,36 +14,89 @@
 }
 
 .wheel-container {
+  position: relative;
   width: 100%;
   text-align: center;
-  padding: 3% 0 0 0;
+  padding: 50px 0 0 0;
 }
 
+.selection {
+  position: absolute;
+  top: 0;
+  left: 49%;
+  width: 25px;
+  height: 25px;
+  transform: rotate(45deg);
+  border-top:transparent solid 25px; 
+  border-right:chartreuse solid 25px; 
+}
+
+#wheelCanvas {
+  background-color: rgb(65, 65, 65);
+  border-radius: 50%;
+}
 
 p.header {
   font-size: 16px;
-  padding-left: 15px;
+  padding: 10px 0 0 10px;
   font-weight: bold;
 }
 .option-item {
   list-style-type: none;
-  padding-left: 15px;
+  padding-left: 10px;
   display: flex;
-  flex-direction: column;
+  margin: 0;
+  flex-wrap: wrap;
 }
 
 .option-item > li {
+  position: relative;
+  width: 80%;
+  margin-right: 0;
   padding: 10px 10px 10px 0px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.option-item > li > button {
-  float: right;
+.option-item > button {
+  position: relative;
+  align-self: center;
+  width: 20%;
   border: none;
+  right: 0;
   background-color: transparent;
-  padding-right: 0;
-  margin-right: 0;
+  padding: 0;
+  margin: 0;
   cursor: pointer;
+}
+
+.btn-container {
+  padding-top: 2rem;
+}
+
+.btn-rounded {
+  border-radius: 50px;
+}
+
+.btn {
+  width: 50%;
+  font-size: 1.25rem;
+}
+.btn:focus {
+  outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 196, 0, 0.25);
+}
+
+.btn-gradient {
+  background-image: linear-gradient(to right, rgba(255, 0, 0, 0.57) , rgba(255, 255, 0, 0.541));
+  color: black;
+  border-color: black;
+}
+
+@media screen and (max-width: 450px) {
+  #wheelCanvas {
+    width: 300px;
+    height: 300px;
+  }
 }

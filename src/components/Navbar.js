@@ -3,35 +3,25 @@ import './Navbar.css';
 
 
 function Navbar() {
-   const [click, setClick] = useState(false);
-
-   const handleClick = () => setClick(!click);
-   const closeMobileMenu = () => setClick(false);
    return (
       <>
-         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a href="#" className="navbar-brand">BrandName</a>
-            <div className="collapse navbar-collapse">
-               <ul className="navbar-nav">
+         <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+            <a href="/" className="navbar-brand">BrandName</a>
+            <button className='navbar-toggler'>
+               <span className='navbar-toggler-icon' data-toggle="collapse" data-target="#navBarMenu"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navBarMenu">
+               <ul className="navbar-nav ml-auto">
                   <li className='nav-item'>
-                     <a href='#' className='nav-links nav-brand' onClick={closeMobileMenu}>
-                        Home
-                     </a>
+                     <a href='/' className='nav-link'>Home</a>
                   </li>
                   <li className='nav-item'>
-                     <a href='radomiser' className='nav-links' onClick={closeMobileMenu}>
-                        Radomiser
-                     </a>
+                     <a href='radomiser' className='nav-link'>Radomiser</a>
                   </li>
                   <li className='nav-item'>
-                     <a href='to-do-list' className='nav-links' onClick={closeMobileMenu}>
-                        To do list
-                     </a>
+                     <a href='to-do-list' className='nav-link'>To do list</a>
                   </li>
                </ul>
-               <div className='menu icon' onClick={handleClick}>
-                  <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-               </div>
             </div>
          </nav>
       </>

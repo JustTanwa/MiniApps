@@ -1,4 +1,4 @@
-import React, { useState }from 'react';
+import React from 'react';
 import './Textbox.css';
 
 export const Textbox = ({updateOption}) => {
@@ -12,8 +12,8 @@ export const Textbox = ({updateOption}) => {
     }
 
     return (
-        <div className='txt'>
-            <input onKeyPress={handleChange} type="text" ></input>
-        </div>
+        <lable className='txt'>
+            <input onKeyPress={handleChange} type="text" className='form-control-sm' ></input>
+        </lable>
     )
 }

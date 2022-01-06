@@ -1,8 +1,5 @@
 import React, { useRef } from 'react';
 import { useEffect } from 'react';
-import './Wheel.css';
-import Button from './Button';
-import { useOutlet } from 'react-router-dom';
 
 export const Wheel = props => {
    const { slices, optionList, ...rest } = props
@@ -22,7 +19,7 @@ export const Wheel = props => {
    const draw = (ctx, n=1) => {
       const centerX = ctx.canvas.width / 2;
       const centerY = ctx.canvas.height / 2;
-      const rad = ctx.canvas.width / 2 - 10;
+      const rad = ctx.canvas.width / 2 - 5;
       const slice = n === 0? Math.PI * 2:  Math.PI * 2/ n;
       for (let i = 0; i < n; i++) {
          ctx.save();
@@ -53,10 +50,13 @@ export const Wheel = props => {
    }
    function frame() {
       if (!angSpd) return;
-      console.log(ang, angSpd);
       angSpd *= friction; // Decrement velocity by friction
       if (angSpd < 0.002) {
          angSpd = 0;
+         const optionButton = document.querySelectorAll('.option-btn');
+         optionButton.forEach(button => {
+            button.removeAttribute("disabled");
+         });
       }; // Bring to stop
       ang += angSpd; // Update angle
       ang %= (2 * Math.PI); // Normalize angle
@@ -71,6 +71,11 @@ export const Wheel = props => {
    function handleSpinClick() {
       if (!angSpd) {
          angSpd = random();
+         const optionButton = document.querySelectorAll('.option-btn');
+         optionButton.forEach(button => {
+            button.setAttribute("disabled", "true");
+         });
+
       }
    }
 
@@ -84,9 +89,10 @@ export const Wheel = props => {
 
 
    return (<>
+            <div className='selection'></div>
             <canvas id='wheelCanvas' ref={canvasRef} {...props}/>
             <div className='btn-container'>
-               <button className="btn btn-color w-100px btn-lg" type="button" onClick={handleSpinClick}> Spin </button>
+               <button className="btn btn-gradient btn-rounded" type="button" onClick={handleSpinClick}> Spin </button>
             </div>
             
          </>)
