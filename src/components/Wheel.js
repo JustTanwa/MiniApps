@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useEffect } from 'react';
 
 export const Wheel = props => {
-   const { slices, optionList, ...rest } = props
+   const { slices, optionlist } = props
    const canvasRef = useRef(null);
    const colors = ['#EFBCD5',
                   '#3185FC',
@@ -35,10 +35,10 @@ export const Wheel = props => {
          ctx.rotate(slice*i + slice / 2);
          ctx.textAlign = "right";
          ctx.fillStyle = "#fff";
-         ctx.font = optionList[i].name.length > 10 ? 
+         ctx.font = optionlist[i].name.length > 10 ? 
                   "bold 20px sans-serif"
                   :"bold 26px sans-serif";
-         ctx.fillText(optionList[i] ? optionList[i].name: "", rad - 10, 10);
+         ctx.fillText(optionlist[i] ? optionlist[i].name: "", rad - 10, 10);
          ctx.restore(); 
       }
    

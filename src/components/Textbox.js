@@ -12,8 +12,8 @@ export const Textbox = ({updateOption}) => {
     }
 
     return (
-        <lable className='txt'>
+        <label className='txt'>
             <input onKeyPress={handleChange} type="text" className='form-control-sm' ></input>
-        </lable>
+        </label>
     )
 }

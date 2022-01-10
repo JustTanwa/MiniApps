@@ -62,7 +62,7 @@ function App() {
           </div>
           <div className='col-md-9'>
             <div className='wheel-container'>
-              <Wheel slices={optionList.length ? optionList.length : 1} optionList={optionList} width='400' height='400' />
+              <Wheel slices={optionList.length ? optionList.length : 1} optionlist={optionList} width='400' height='400' />
             </div>
           </div>
         </div>

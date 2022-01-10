@@ -73,6 +73,7 @@ p.header {
 
 .btn-container {
   padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .btn-rounded {
@@ -80,12 +81,22 @@ p.header {
 }
 
 .btn {
-  width: 50%;
+  width: 30%;
   font-size: 1.25rem;
 }
 .btn:focus {
   outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(255, 196, 0, 0.25);
+}
+
+.btn:active {
+  animation: flash ease-in-out 0.25s infinite;
+}
+
+@keyframes flash {
+  0% {background-color: tomato;}
+  100% {background-color: violet;}
+
 }
 
 .btn-gradient {
