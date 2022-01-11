@@ -52,8 +52,10 @@ export const Wheel = props => {
    function spin() {
       const curSelection = optionlist[getIndex()];
       if (angSpd < 0.002) {
-         const selection = document.querySelector(".selection");
+         const selection = document.querySelector(".winnerChoice");
          selection.innerHTML = curSelection.name;
+         selection.style.display = "block";
+         setTimeout(() => selection.style.display = "none", 2500);
       } // show the selection
 
       const EL_wheel = document.querySelector("#wheelCanvas")
@@ -101,6 +103,7 @@ export const Wheel = props => {
 
    return (<>
             <div className='selection'></div>
+            <div className='winnerChoice'></div>
             <canvas id='wheelCanvas' ref={canvasRef} {...props}/>
             <div className='btn-container'>
                <button className="btn btn-gradient btn-rounded" type="button" onClick={handleSpinClick}> Spin </button>

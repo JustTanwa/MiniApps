@@ -6,10 +6,10 @@ import Wheel from './components/Wheel';
 import Footer from './components/Footer';
 
 function App() {
-  const defaultList = [{ name: "Bowling", id: 1 },
-  { name: "Take away", id: 2 },
-  { name: "Watch movies", id: 3 },
-  { name: "Rock climbing", id: 4 }
+  const defaultList = [{ name: "Order take away", id: 1 },
+  { name: "Go to the cinema", id: 2 },
+  { name: "Go to the gym", id: 3 },
+  { name: "Stay in and sleep", id: 4 }
   ]
   const [option, setOption] = useState('');
   const [optionList, setOptionList] = useState(defaultList);
@@ -55,6 +55,12 @@ function App() {
                   </>)
               })}
             </ul>
+            <details className='instructions'>
+              <summary>Instructions</summary>
+              <p className='steps'>1. Add your own options using the above textbox before removing the default options.</p>
+              <p className='steps'>2. When ready, press spin to randomise a selection!</p>
+              <p className='steps'>3. To remove an option press the "X".</p>
+            </details>
           </div>
           <div className='col-md-9'>
             <div className='wheel-container'>

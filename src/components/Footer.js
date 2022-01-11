@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
     return (
         <footer>
-            <div className="container pt-4 text-center fixed-bottom pb-2">
+            <div className="container pt-4 text-center position-relative pb-2">
                 © {new Date().getFullYear()}
                 <a
                     className="btn-lg text-dark m-1"

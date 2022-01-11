@@ -31,6 +31,36 @@
   border-right:chartreuse solid 25px; 
 }
 
+.winnerChoice {
+  position: absolute;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  border:rgb(0, 0, 0) solid 2px;
+  border-radius: 5px;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  top: 35%;
+  left: 25%;
+  width: 50%;
+  height: auto;
+  display: none;
+  background-color: #c6f4ff;
+  animation: flashing 1s cubic-bezier(0.4, 0, 0.2, 1) infinite forwards;
+  z-index: 1;
+}
+
+@keyframes flashing {
+  0% {
+    padding-top: 25px;
+  }
+  50% {
+    padding-top: 40px;
+  }
+  100% {
+    padding-top: 25px;
+  }
+}
 #wheelCanvas {
   background-color: rgb(65, 65, 65);
   border-radius: 50%;
@@ -100,7 +130,7 @@ p.header {
 }
 
 .btn-gradient {
-  background-image: linear-gradient(to right, rgba(255, 0, 0, 0.57) , rgba(255, 255, 0, 0.541));
+  background-image: linear-gradient(to right, rgba(85, 235, 255, 0.842) , rgba(36, 180, 247, 0.541));
   color: black;
   border-color: black;
 }
@@ -110,4 +140,19 @@ p.header {
     width: 300px;
     height: 300px;
   }
+}
+
+.instructions {
+  padding: 5px 10px;
+  
+}
+
+.instructions > summary {
+  margin-bottom: 10px;
+}
+
+.steps {
+  margin-bottom: 10px;
+  padding-right: 30px;
+  text-align: left;
 }
