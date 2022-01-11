@@ -7,8 +7,16 @@ export const Wheel = props => {
    const colors = ['#EFBCD5',
                   '#3185FC',
                   '#F9DC5C',
+                  '#aaee95',
                   '#E84855',
-                  '#393843'
+                  '#393843',
+                  '#f8c1dc',
+                  '#a77ece',
+                  '#d8e68e',
+                  '#fcc45e',
+                  '#a53942',
+                  '#3c2fce',
+                  '#6ebb9b'
                   ];
    
    const friction = 0.995;
@@ -27,7 +35,7 @@ export const Wheel = props => {
          ctx.save();
          //drawing each sector
          ctx.beginPath();
-         ctx.fillStyle = n ? colors[i % 6]: 'white';
+         ctx.fillStyle = n ? colors[i % 13]: 'white';
          ctx.moveTo(centerX,centerY);
          ctx.arc(centerX, centerY, rad, slice*i, slice + slice*i);
          ctx.lineTo(centerX,centerY);
