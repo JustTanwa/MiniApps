@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import { Textbox } from './components/Textbox';
 import React, { useState, useEffect } from 'react';
 import Wheel from './components/Wheel';
-import { isDisabled } from '@testing-library/user-event/dist/utils';
+import Footer from './components/Footer';
 
 function App() {
   const defaultList = [{ name: "Bowling", id: 1 },
@@ -36,10 +36,6 @@ function App() {
 
   }
 
-  const handleSpin = () => {
-    console.log("code the spinning");
-  }
-
   return (
     <div className='App'>
       <Navbar />
@@ -67,6 +63,7 @@ function App() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
 
 

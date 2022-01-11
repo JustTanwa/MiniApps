@@ -6,7 +6,7 @@ function Navbar() {
    return (
       <>
          <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-            <a href="/" className="navbar-brand">BrandName</a>
+            <a href="/" className="navbar-brand">MiniApps</a>
             <button className='navbar-toggler'>
                <span className='navbar-toggler-icon' data-toggle="collapse" data-target="#navBarMenu"></span>
             </button>

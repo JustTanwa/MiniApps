@@ -16,6 +16,8 @@ export const Wheel = props => {
    let angSpd = 0;
    let ang = 0;
 
+   const getIndex = () => Math.floor(slices - ang / (2 * Math.PI) * slices) % slices;
+
    const draw = (ctx, n=1) => {
       const centerX = ctx.canvas.width / 2;
       const centerY = ctx.canvas.height / 2;
@@ -35,16 +37,25 @@ export const Wheel = props => {
          ctx.rotate(slice*i + slice / 2);
          ctx.textAlign = "right";
          ctx.fillStyle = "#fff";
-         ctx.font = optionlist[i].name.length > 10 ? 
-                  "bold 20px sans-serif"
-                  :"bold 26px sans-serif";
-         ctx.fillText(optionlist[i] ? optionlist[i].name: "", rad - 10, 10);
+         const refracList = optionlist.map(({name}) => {
+            if(name.length > 10) {
+              return [name.slice(0, 10) + "..."]
+            }
+            return [name.slice(0, 10)]})
+         ctx.font = "bold 26px sans-serif";
+         ctx.fillText(optionlist[i] ? refracList[i]: "", rad - 10, 10);
          ctx.restore(); 
       }
    
    }   
 
    function spin() {
+      const curSelection = optionlist[getIndex()];
+      if (angSpd < 0.002) {
+         const selection = document.querySelector(".selection");
+         selection.innerHTML = curSelection.name;
+      } // show the selection
+
       const EL_wheel = document.querySelector("#wheelCanvas")
       EL_wheel.style.transform = `rotate(${ang - Math.PI / 2}rad)`;
    }
@@ -70,11 +81,11 @@ export const Wheel = props => {
 
    function handleSpinClick() {
       if (!angSpd) {
-         angSpd = random();
+         angSpd = random(); // choose random speed between 0.25 and 0.45
          const optionButton = document.querySelectorAll('.option-btn');
          optionButton.forEach(button => {
             button.setAttribute("disabled", "true");
-         });
+         }); // disable the remove button while spinning
 
       }
    }
