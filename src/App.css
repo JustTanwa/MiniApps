@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 .main-container {
   display: flex;
   height: 100%;
@@ -157,11 +160,18 @@ p.header {
   text-align: left;
 }
 
-foot {
-  color: #aaee95;
-  color: #d8e68e;
-  color: #6ebb9b;
-  color: #a53942;
-  color: #3c2fce;
+.bg-blue {
+  background-color: cornflowerblue;
 }
 
+.bg-green {
+  background-color: rgb(100, 237, 191);
+}
+
+.vh-95 {
+  height: 95vh;
+}
+
+.vh-90 {
+  height: 90vh;
+}

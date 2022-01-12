@@ -4,6 +4,7 @@ import { Textbox } from './components/Textbox';
 import React, { useState, useEffect } from 'react';
 import Wheel from './components/Wheel';
 import Footer from './components/Footer';
+import Todolist from './components/Todolist';
 
 function App() {
   const defaultList = [{ name: "Order take away", id: 1 },
@@ -39,9 +40,10 @@ function App() {
   return (
     <div className='App'>
       <Navbar />
-      <div className='container-fluid'>
+      <div className='container-fluid bg-blue vh-95' id="randomiser">
         <div className='row'>
           <div className='col-md-3'>
+            <h2 className='text-center pt-3'>Randomiser</h2>
             <p className='header'> Add an option here</p>
             <Textbox updateOption={updateOption} />
             <ul className='option-item'>
@@ -69,6 +71,7 @@ function App() {
           </div>
         </div>
       </div>
+      <Todolist />
       <Footer />
     </div>
 

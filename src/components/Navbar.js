@@ -16,10 +16,10 @@ function Navbar() {
                      <a href='/' className='nav-link'>Home</a>
                   </li>
                   <li className='nav-item'>
-                     <a href='radomiser' className='nav-link'>Radomiser</a>
+                     <a href='#randomiser' className='nav-link'>Radomiser</a>
                   </li>
                   <li className='nav-item'>
-                     <a href='to-do-list' className='nav-link'>To do list</a>
+                     <a href='#todolist' className='nav-link'>To do list</a>
                   </li>
                </ul>
             </div>
