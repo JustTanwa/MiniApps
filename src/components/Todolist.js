@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Textbox } from "./Textbox";
 
 function Todolist() {
     const [task, setTask] = useState('')
     const [taskList, setTaskList] = useState([{}]);
+    const taskListRef = useRef([{}])
 
     useEffect(() => {
         let nextId = taskList.length > 1 ? taskList[taskList.length - 1].id + 1 : 1;
@@ -16,9 +17,13 @@ function Todolist() {
     const updateTask = (newTask) => {
         setTask(newTask);
     }
+
+    
+    console.log(taskListRef.current)
     const handleDelete = (id) => {
-        const newList = taskList.filter((item) => item.id !== id);
+        const newList = taskListRef.current.filter((item) => item.id !== id);
         if (newList.length > 0) {
+            console.log(newList)
             setTaskList(newList);
         } else {
             setTaskList([]);
@@ -27,7 +32,7 @@ function Todolist() {
 
     const handleSpin = (event, id) => {
         event.target.classList.add("spinning");
-        const deleteTimer = setTimeout(() => handleDelete(id), 1200);
+        const deleteTimer = setTimeout(() => {handleDelete(id)}, 1200);
         
     }
 
