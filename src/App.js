@@ -1,10 +1,12 @@
 import './App.css';
 import Navbar from './components/Navbar';
+import Home from './components/Home'
 import { Textbox } from './components/Textbox';
 import React, { useState, useEffect } from 'react';
 import Wheel from './components/Wheel';
 import Footer from './components/Footer';
 import Todolist from './components/Todolist';
+
 
 function App() {
   const defaultList = [{ name: "Order take away", id: 1 },
@@ -40,7 +42,8 @@ function App() {
   return (
     <div className='App'>
       <Navbar />
-      <div className='container-fluid bg-blue vh-95' id="randomiser">
+      <Home />
+      <div className='container-fluid bg-grey vh-100' id="randomiser">
         <div className='row'>
           <div className='col-md-3'>
             <h2 className='text-center pt-3'>Randomiser</h2>

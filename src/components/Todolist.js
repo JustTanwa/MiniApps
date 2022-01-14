@@ -4,7 +4,6 @@ import { Textbox } from "./Textbox";
 function Todolist() {
     const [task, setTask] = useState('')
     const [taskList, setTaskList] = useState([{}]);
-    const taskListRef = useRef([{}])
 
     useEffect(() => {
         let nextId = taskList.length > 1 ? taskList[taskList.length - 1].id + 1 : 1;
@@ -18,12 +17,9 @@ function Todolist() {
         setTask(newTask);
     }
 
-    
-    console.log(taskListRef.current)
     const handleDelete = (id) => {
-        const newList = taskListRef.current.filter((item) => item.id !== id);
+        const newList = taskList.filter((item) => item.id !== id);
         if (newList.length > 0) {
-            console.log(newList)
             setTaskList(newList);
         } else {
             setTaskList([]);
@@ -37,7 +33,7 @@ function Todolist() {
     }
 
     return (
-        <div className="container-fluid bg-green vh-90" id="todolist">
+        <div className="container-fluid bg-grey vh-100" id="todolist">
             <section>
                 <h3 className="text-center">To do list</h3>
                 <Textbox updateOption={updateTask} />
@@ -46,7 +42,7 @@ function Todolist() {
                         {taskList.map((item) => {
                             if (!(Object.keys(item).length === 0 && item.constructor === Object)) {
                                 return (
-                                    <div className="col-sm-3 p-3" key={item.id}>
+                                    <div className="col-3 p-3" key={item.id}>
                                         <div className="myCard">
                                             <button type="button" onClick={(e) => handleSpin(e, item.id)} className='card-inner'>{item.task}</button>
                                         </div>
