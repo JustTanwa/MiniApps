@@ -26,13 +26,13 @@ function Footer() {
                 ></a>
                 <a
                     className="btn-lg text-dark m-1"
-                    href="#"
+                    href="https://www.linkedin.com/in/tanwasripan/"
                     role="button"
                 ><i className="fab fa-linkedin"></i
                 ></a>
                 <a
                     className="btn-lg text-dark m-1"
-                    href="#"
+                    href="https://github.com/Katakung95"
                     role="button"
                 ><i className="fab fa-github"></i
                 ></a>
