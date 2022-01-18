@@ -33,16 +33,16 @@ function Todolist() {
     }
 
     return (
-        <div className="container-fluid bg-grey vh-100" id="todolist">
+        <div className="container-fluid bg-grey vh-100 mt-3" id="todolist">
             <section>
-                <h3 className="text-center">To do list</h3>
+                <h3 className="text-center pt-3">To do list</h3>
                 <Textbox updateOption={updateTask} />
                 <div className="container-fluid">
                     <div className="row">
                         {taskList.map((item) => {
                             if (!(Object.keys(item).length === 0 && item.constructor === Object)) {
                                 return (
-                                    <div className="col-3 p-3" key={item.id}>
+                                    <div className="col-6 col-sm-3 p-3" key={item.id}>
                                         <div className="myCard">
                                             <button type="button" onClick={(e) => handleSpin(e, item.id)} className='card-inner'>{item.task}</button>
                                         </div>
